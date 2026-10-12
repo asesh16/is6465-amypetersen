@@ -1,0 +1,13 @@
+Tool: GitHub Copilot
+Prompts:
+"add a link to import bootstrap latest version"
+"how can I add a Bootstrap .container for the main content on this page?"
+"where would I assign a form-label to the elements on this page"
+"Explain to me when I would use the Bootstrap styling instead of my css styles"
+
+Usage summary:
+AI helped me to know where and how to add some of the required elements for this assignment. It also helped explain concepts I learned from it. 
+
+Revision example: 
+I asked AI to help me to assign a design element to a variable, but I realized that I was not the place I wanted it. 
+I was able to reuse the code it helped generate in the correct place without needing to query again.
