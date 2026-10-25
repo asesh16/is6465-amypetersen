@@ -1,58 +1,80 @@
 <?php
 
-// echo "Hello from the server";
-
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
-    exit("Method not allowed");
+    exit("Please submit the tutoring request form using POST.");
 }
 
-$course = trim($_POST["course"] ?? "");
-$topic = trim($_POST["topic"] ?? "");
-$preferredTime = $_POST["preferredtime"] ?? "";
-$preferredDate = $_POST["preferreddate"] ?? "";
+$courseInput = $_POST["course"] ?? "";
+$topicInput = $_POST["topic"] ?? "";
+$preferredDateInput = $_POST["preferreddate"] ?? "";
+$preferredTimeInput = $_POST["preferredtime"] ?? "";
 
-echo "Course: $course\n <br>";
-echo "Topic: $topic\n <br>";
-echo "Preferred time: $preferredTime\n <br>";
-echo "Preferred date: $preferredDate\n <br>";
-
+$course = is_string($courseInput) ? trim($courseInput) : "";
+$topic = is_string($topicInput) ? trim($topicInput) : "";
+$preferredDate = is_string($preferredDateInput) ? $preferredDateInput : "";
+$preferredTime = is_string($preferredTimeInput) ? $preferredTimeInput : "";
 
 $errors = [];
 $allowedCourses = ["IS 6465", "IS 6495", "IS 6570"];
 $allowedTimes = ["Morning", "Afternoon", "Evening"];
 
 if (!in_array($course, $allowedCourses, true)) {
-    $errors["course"] = "Select a valid course.";
+    $errors[] = "Select a valid course.";
 }
 
 if (!in_array($preferredTime, $allowedTimes, true)) {
-    $errors["preferred_time"] = "Select a valid preferred time.";
+    $errors[] = "Select a valid preferred time.";
 }
 
-
-if ($topic === "" || mb_strlen($topic) > 120) {
-    $errors["topic"] = "Enter a topic of 1 to 120 characters.";
+$topicLength = preg_match_all('/./us', $topic);
+if ($topic === "" || $topicLength === false || $topicLength > 120) {
+    $errors[] = "Enter a topic of 1 to 120 characters.";
 }
 
-$today= new DateTimeImmutable("today");
 $preferredDateTime = DateTimeImmutable::createFromFormat("!Y-m-d", $preferredDate);
-$validDate = $preferredDateTime !== false && $preferredDateTime->format("Y-m-d") === $preferredDate;
+$validDate = $preferredDateTime !== false
+    && $preferredDateTime->format("Y-m-d") === $preferredDate;
+$today = new DateTimeImmutable("today");
 
 if (!$validDate) {
-    $errors["preferred_date"] = "Enter a valid preferred date.";
+    $errors[] = "Enter a valid preferred date.";
 } elseif ($preferredDateTime < $today) {
-    $errors["preferred_date"] = "Preferred date cannot be in the past.";
+    $errors[] = "Preferred date cannot be in the past.";
 }
 
-print_r($errors);
-
-if (!$errors) {
-    echo "<h1>Request received</h1>";
-    echo "<p>Course: " . htmlspecialchars($course, ENT_QUOTES, "UTF-8") . "</p>";
-    echo "<p>Topic: " . htmlspecialchars($topic, ENT_QUOTES, "UTF-8") . "</p>";
-    echo "<p>Status: Pending review</p>";
-}
-
-
+$escape = static function (string $value): string {
+    return htmlspecialchars($value, ENT_QUOTES, "UTF-8");
+};
 ?>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo $errors ? "Request errors" : "Request received"; ?></title>
+</head>
+
+<body>
+    <main>
+        <?php if ($errors): ?>
+            <h1>There were problems with your request</h1>
+            <ul>
+                <?php foreach ($errors as $error): ?>
+                    <li><?php echo $escape($error); ?></li>
+                <?php endforeach; ?>
+            </ul>
+            <p><a href="request-form.html">Return to the request form</a></p>
+        <?php else: ?>
+            <h1>Request received</h1>
+            <p>Course: <?php echo $escape($course); ?></p>
+            <p>Topic: <?php echo $escape($topic); ?></p>
+            <p>Preferred date: <?php echo $escape($preferredDate); ?></p>
+            <p>Preferred time: <?php echo $escape($preferredTime); ?></p>
+            <p>Status: Pending review</p>
+        <?php endif; ?>
+    </main>
+</body>
+
+</html>
