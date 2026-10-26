@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #222;
+    background: #f3f3f3;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 24px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.site-header > a {
+    color: #111;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+}
+
+a {
+    color: #075e9b;
+}
+
+nav a,
+.site-header > a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.page {
+    width: min(100% - 32px, 800px);
+    margin: 32px auto;
+}
+
+.panel {
+    padding: 24px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 24px;
+}
+
+h2 {
+    margin: 24px 0 12px;
+    font-size: 19px;
+}
+
+h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.page-heading h1 {
+    margin: 0;
+}
+
+.gift-card-list {
+    display: grid;
+    gap: 12px;
+}
+
+.gift-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.gift-card img {
+    display: block;
+    width: 180px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.gift-card p {
+    margin: 0;
+}
+
+.details-layout {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) minmax(250px, 1.3fr);
+    align-items: start;
+    gap: 24px;
+}
+
+.details-layout > img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+.gift-card-detail {
+    display: none;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+    scroll-margin-top: 20px;
+}
+
+.gift-card-detail:target,
+.gift-card-details:not(:has(.gift-card-detail:target)) .gift-card-detail:first-child {
+    display: block;
+}
+
+.gift-card-detail:first-child {
+    padding-top: 0;
+}
+
+.gift-card-detail:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.gift-card-detail .button {
+    margin-top: 20px;
+}
+
+.card-details {
+    margin: 0;
+}
+
+.card-details div {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.card-details dt {
+    font-weight: bold;
+}
+
+.card-details dd {
+    margin: 0;
+}
+
+.form-panel {
+    max-width: 480px;
+}
+
+.card-update-forms form {
+    display: none;
+}
+
+.card-update-forms form:target,
+.card-update-forms:not(:has(form:target)) form:first-child {
+    display: block;
+}
+
+.form-field {
+    display: grid;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.form-field label {
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 38px;
+    padding: 8px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    background: #fff;
+    color: #222;
+    font: inherit;
+}
+
+.input-with-prefix {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-with-prefix span {
+    font-weight: bold;
+}
+
+.input-with-prefix input {
+    flex: 1;
+}
+
+button,
+.button {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid #075e9b;
+    border-radius: 2px;
+    background: #075e9b;
+    color: #fff;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+    background: #064b7b;
+    text-decoration: none;
+}
+
+.button-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.login-page {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 16px;
+}
+
+.login-panel {
+    width: min(100%, 360px);
+}
+
+.login-panel p {
+    margin: -8px 0 20px;
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 16px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .gift-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .gift-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .details-layout {
+        grid-template-columns: 1fr;
+    }
+}

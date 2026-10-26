@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Starbucks gift card</title>
+  <desc id="desc">Green coffee gift card with a white cup illustration.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#176746"/><stop offset="1" stop-color="#0c4934"/></linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#fff" opacity=".12"/></pattern>
+  </defs>
+  <rect width="640" height="360" rx="28" fill="url(#bg)"/>
+  <rect width="640" height="360" rx="28" fill="url(#dots)"/>
+  <circle cx="500" cy="182" r="158" fill="#d0dfc7" opacity=".09"/>
+  <circle cx="500" cy="182" r="119" fill="none" stroke="#dbe7d8" stroke-opacity=".3" stroke-width="2"/>
+  <path d="M427 128h119l-10 117c-2 22-21 39-43 39h-12c-22 0-41-17-43-39z" fill="#fffefa"/>
+  <path d="M546 151h22c23 0 23 57 0 57h-27" fill="none" stroke="#fffefa" stroke-width="13"/>
+  <path d="M445 274h89" stroke="#d6c79b" stroke-width="7" stroke-linecap="round"/>
+  <path d="M466 112c-12-19 11-24 0-43m34 43c-12-19 11-24 0-43m34 43c-12-19 11-24 0-43" fill="none" stroke="#e7cf91" stroke-linecap="round" stroke-width="5"/>
+  <text x="42" y="78" fill="#e6cf98" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4">A MOMENT FOR YOU</text>
+  <text x="42" y="150" fill="#fffefa" font-family="Georgia,serif" font-size="48">Coffee,</text>
+  <text x="42" y="207" fill="#fffefa" font-family="Georgia,serif" font-size="48">on your terms.</text>
+  <text x="44" y="300" fill="#d3e2d4" font-family="Arial,sans-serif" font-size="18" letter-spacing="2">STARBUCKS</text>
+</svg>

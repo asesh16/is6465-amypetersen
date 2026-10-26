@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Target gift card</title>
+  <desc id="desc">Red gift card with a white and red target symbol.</desc>
+  <rect width="640" height="360" rx="28" fill="#c8102e"/>
+  <circle cx="490" cy="184" r="140" fill="#a30c25" opacity=".45"/>
+  <circle cx="490" cy="184" r="86" fill="#fff"/>
+  <circle cx="490" cy="184" r="54" fill="#c8102e"/>
+  <circle cx="490" cy="184" r="23" fill="#fff"/>
+  <text x="44" y="92" fill="#fff" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="3">TARGET</text>
+  <text x="44" y="174" fill="#fff" font-family="Georgia,serif" font-size="46">Find something</text>
+  <text x="44" y="230" fill="#fff" font-family="Georgia,serif" font-size="46">wonderful.</text>
+  <path d="M48 282h170" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+</svg>

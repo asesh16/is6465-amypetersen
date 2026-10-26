@@ -1,0 +1,21 @@
+AI tool used: Copilot AI assistant in VS Code (Copilot SDK).
+
+Prompts used:
+- "Help me connect the five static PHP-extension HTML pages for this gift-card website. Help me connect them to each other with links and form actions. Use an external stylesheet, and do not use PHP logic, databases, or JavaScript."
+- "Make the pages accessible and responsive, use labeled form fields and realistic gift-card sample data, and create a polished but easy-to-understand visual style."
+- "Review the links, image paths, form actions, and page requirements."
+
+How AI supported the work:
+AI helped draft the navigation, images, sample reward content, and responsive CSS. I reviewed the generated pages and verified that the links, form destinations, and image files match the assignment workflow.
+
+Example of a suggestion tested:
+AI suggested using labeled inputs and native form controls for the add and update pages. I checked that each label's "for" value matches its control's "id", that the update fields contain the existing Starbucks values, and that both forms submit to card-list.php. I also kept the forms as static HTML rather than adding PHP, JavaScript, or data storage.
+
+Follow-up prompt:
+"Please help me to better follow the design in these wireframes "
+
+How the wireframes guided the revision:
+I reviewed the supplied wireframes and simplified the pages to use plain headings, bordered panels, gift-card image and information rows, a simple details layout, and straightforward single-column forms.
+
+AI prompt correction:
+I followed the rubric clarification to show several gift cards in the list, despite having only generated one card for an example. I prompted copilot to generate several more card images and help to input details for the cards. 
