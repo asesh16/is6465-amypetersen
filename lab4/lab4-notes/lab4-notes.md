@@ -35,12 +35,11 @@ I opened requests.php, which lists three sample requests (IDs 12, 13, and 14) wi
 
 
 CRUD action	| Page
-
-Create	| request-form.php, which submits to process-request.php
-Read one request	| request-details.php
-Read all requests	| requests.php
-Update	| edit-request.php
-Delete	| delete-request.php
+1. Create: request-form.php, which submits to process-request.php
+2. Read one request: request-details.php
+3. Read all requests: requests.php
+4. Update: edit-request.php
+5. Delete: delete-request.php
 
 1. The query parameter is request_id. For request 12 the URL is request-details.php?request_id=12.
 
